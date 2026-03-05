@@ -60,10 +60,6 @@ const i18n = {
     stackCardText4: "Aprofundamento em arquitetura de produto, observabilidade e otimização de performance ponta a ponta.",
     projectsTitle: 'Projetos com <span class="text-accent">engenharia aplicada</span> em produção',
     projectsSubtitle: "Soluções para contextos reais de operação, produto e escala.",
-    githubActivityAriaLabel: "Atividade pública no GitHub dos últimos 30 dias",
-    githubActivityLoading: "Carregando atividade pública no GitHub...",
-    githubActivityMeta: "Últimos 30 dias: {total} atividades públicas no GitHub · leonardoleaoo",
-    githubActivityUnavailable: "Não foi possível carregar a atividade do GitHub agora.",
     contactTitle: "Vamos tirar uma ideia do papel?",
     contactText: "Disponível para novos produtos, modernização de sistemas e parcerias de longo prazo.",
     instagramLabel: "Instagram",
@@ -118,10 +114,6 @@ const i18n = {
     stackCardText4: "Deepening product architecture, observability, and end-to-end performance optimization.",
     projectsTitle: 'Projects with <span class="text-accent">applied engineering</span> in production',
     projectsSubtitle: "Solutions built for real-world product, operations, and scale challenges.",
-    githubActivityAriaLabel: "Public GitHub activity in the last 30 days",
-    githubActivityLoading: "Loading public GitHub activity...",
-    githubActivityMeta: "Last 30 days: {total} public GitHub activities · leonardoleaoo",
-    githubActivityUnavailable: "Could not load GitHub activity right now.",
     contactTitle: "Ready to bring an idea to production?",
     contactText: "Available for new products, system modernization, and long-term partnerships.",
     instagramLabel: "Instagram",
@@ -264,13 +256,8 @@ const projetos = [
 ];
 
 const projectsGrid = document.getElementById("projectsGrid");
-const GITHUB_USERNAME = "leonardoleaoo";
-const GITHUB_ACTIVITY_DAYS = 30;
 let currentLang = DEFAULT_LANG;
 let currentTheme = "dark";
-let githubActivitySeries = [];
-let githubActivityTotal = 0;
-let githubActivityLoaded = false;
 const prefersReducedMotion =
   typeof window.matchMedia === "function" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -308,109 +295,6 @@ function getSavedTheme() {
 
 function setSavedTheme(theme) {
   localStorage.setItem(STORAGE_THEME_KEY, FORCED_THEME);
-}
-
-function formatDateKey(date) {
-  return date.toISOString().slice(0, 10);
-}
-
-function calcularNivelAtividade(count, maxCount) {
-  if (count <= 0 || maxCount <= 0) return 0;
-  const ratio = count / maxCount;
-  if (ratio >= 0.75) return 4;
-  if (ratio >= 0.5) return 3;
-  if (ratio >= 0.25) return 2;
-  return 1;
-}
-
-function montarSerieAtividadeGithub(events = []) {
-  const today = new Date();
-  const dayKeys = [];
-  const counters = new Map();
-
-  for (let i = GITHUB_ACTIVITY_DAYS - 1; i >= 0; i -= 1) {
-    const date = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-    date.setUTCDate(date.getUTCDate() - i);
-    const key = formatDateKey(date);
-    dayKeys.push(key);
-    counters.set(key, 0);
-  }
-
-  events.forEach((event) => {
-    const createdAt = event?.created_at;
-    if (!createdAt) return;
-    const key = createdAt.slice(0, 10);
-    if (!counters.has(key)) return;
-    counters.set(key, (counters.get(key) ?? 0) + 1);
-  });
-
-  const series = dayKeys.map((key) => ({
-    date: key,
-    count: counters.get(key) ?? 0,
-  }));
-
-  const total = series.reduce((sum, item) => sum + item.count, 0);
-  return { series, total };
-}
-
-function renderAtividadeGithub30Dias() {
-  const chart = document.getElementById("githubActivityChart");
-  const meta = document.getElementById("githubActivityMeta");
-  if (!chart || !meta) return;
-
-  chart.setAttribute("aria-label", t("githubActivityAriaLabel"));
-
-  if (!githubActivityLoaded) {
-    meta.textContent = t("githubActivityLoading");
-    chart.innerHTML = Array.from({ length: GITHUB_ACTIVITY_DAYS })
-      .map(() => '<span class="activity-cell level-0" aria-hidden="true"></span>')
-      .join("");
-    return;
-  }
-
-  const maxCount = githubActivitySeries.reduce((max, item) => Math.max(max, item.count), 0);
-  chart.innerHTML = githubActivitySeries
-    .map((item) => {
-      const level = calcularNivelAtividade(item.count, maxCount);
-      const label = `${item.date}: ${item.count}`;
-      return `<span class="activity-cell level-${level}" title="${escapeHtml(label)}" aria-hidden="true"></span>`;
-    })
-    .join("");
-
-  meta.textContent = t("githubActivityMeta").replace("{total}", String(githubActivityTotal));
-}
-
-async function carregarAtividadeGithub30Dias() {
-  const chart = document.getElementById("githubActivityChart");
-  const meta = document.getElementById("githubActivityMeta");
-  if (!chart || !meta) return;
-
-  renderAtividadeGithub30Dias();
-
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${encodeURIComponent(GITHUB_USERNAME)}/events/public?per_page=100`,
-      { headers: { Accept: "application/vnd.github+json" } }
-    );
-
-    if (!response.ok) throw new Error(`GitHub API ${response.status}`);
-    const events = await response.json();
-    const { series, total } = montarSerieAtividadeGithub(Array.isArray(events) ? events : []);
-
-    githubActivitySeries = series;
-    githubActivityTotal = total;
-    githubActivityLoaded = true;
-    renderAtividadeGithub30Dias();
-  } catch (_error) {
-    githubActivityLoaded = true;
-    githubActivitySeries = Array.from({ length: GITHUB_ACTIVITY_DAYS }, (_, idx) => ({
-      date: `day-${idx + 1}`,
-      count: 0,
-    }));
-    githubActivityTotal = 0;
-    renderAtividadeGithub30Dias();
-    meta.textContent = t("githubActivityUnavailable");
-  }
 }
 
 function atualizarThemeToggleUI() {
@@ -475,7 +359,6 @@ function aplicarTraducoesEstaticas() {
   });
 
   atualizarThemeToggleUI();
-  renderAtividadeGithub30Dias();
 }
 
 function montarCardsProjetos() {
@@ -839,7 +722,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initAnalytics();
   configurarAnoRodape();
   aplicarTraducoesEstaticas();
-  carregarAtividadeGithub30Dias();
   montarCardsProjetos();
   configurarMenuMobile();
   configurarNavegacaoSuave();

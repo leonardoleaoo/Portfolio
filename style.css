@@ -546,7 +546,9 @@ html[data-theme="dark"] .footer-note {
 }
 
 .hero-content {
-  max-width: 780px;
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .hero-title {
@@ -561,6 +563,7 @@ html[data-theme="dark"] .footer-note {
 .hero-bio {
   margin: 0;
   max-width: 64ch;
+  margin-inline: auto;
   color: var(--muted-light);
   font-size: clamp(1.02rem, 2.7vw, 1.2rem);
 }
@@ -570,6 +573,7 @@ html[data-theme="dark"] .footer-note {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  justify-content: center;
 }
 
 .hero-kpis {
@@ -1105,11 +1109,6 @@ button:focus-visible {
 
   .header-btn {
     display: inline-flex;
-  }
-
-  .hero-grid {
-    grid-template-columns: minmax(0, 1.14fr) minmax(350px, 0.86fr);
-    gap: 1.55rem;
   }
 
   .about-grid {
