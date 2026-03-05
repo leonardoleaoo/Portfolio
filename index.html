@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio profissional de Leonardo Leão: engenharia de software, visão de produto e execução orientada a resultado.">
+  <meta name="description" content="Portfolio profissional de Leonardo Leao: engenharia de software, visao de produto e execucao orientada a resultado.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Leonardo Leão">
-  <meta name="theme-color" content="#8B5CF6">
+  <meta name="author" content="Leonardo Leao">
+  <meta name="theme-color" content="#0f766e">
   <link rel="canonical" href="https://leonardoleaoo.github.io/Portf-lio/">
 
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Leonardo Leão | Portfólio Profissional">
+  <meta property="og:title" content="Leonardo Leao | Portfolio Profissional">
   <meta property="og:description" content="Projetos de alto impacto em Front-end, Mobile, SaaS e arquitetura aplicada a produto.">
   <meta property="og:url" content="https://leonardoleaoo.github.io/Portf-lio/">
-  <meta property="og:site_name" content="Portfólio Leonardo Leão">
+  <meta property="og:site_name" content="Portfolio Leonardo Leao">
   <meta property="og:image" content="https://leonardoleaoo.github.io/Portf-lio/og-cover.svg">
-  <meta property="og:image:alt" content="Portfólio profissional de Leonardo Leão">
+  <meta property="og:image:alt" content="Portfolio profissional de Leonardo Leao">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Leonardo Leão | Portfólio Profissional">
+  <meta name="twitter:title" content="Leonardo Leao | Portfolio Profissional">
   <meta name="twitter:description" content="Projetos de alto impacto em Front-end, Mobile, SaaS e arquitetura aplicada a produto.">
   <meta name="twitter:image" content="https://leonardoleaoo.github.io/Portf-lio/og-cover.svg">
 
@@ -27,21 +27,20 @@
   <link rel="shortcut icon" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <link rel="manifest" href="site.webmanifest">
-  <title>Leonardo Leão | Portfólio Profissional</title>
+  <title>Leonardo Leao | Portfolio Profissional</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Leonardo Leão",
+      "name": "Leonardo Leao",
       "jobTitle": "Desenvolvedor Front-end",
-      "description": "Engenharia de software com visão de produto e execução orientada a resultado.",
+      "description": "Engenharia de software com visao de produto e execucao orientada a resultado.",
       "url": "https://leonardoleaoo.github.io/Portf-lio/",
       "sameAs": [
         "https://github.com/leonardoleaoo",
@@ -59,22 +58,49 @@
   </script>
 </head>
 <body>
+  <div class="bg-orb orb-one" aria-hidden="true"></div>
+  <div class="bg-orb orb-two" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand">LEONARDO LEÃO</a>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#inicio" data-i18n="navHome">Início</a>
+      <a href="#inicio" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Leonardo Leao</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobileMenuButton"
+        aria-label="Abrir menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="primaryNav" aria-label="Navegacao principal">
+        <a href="#inicio" data-i18n="navHome">Inicio</a>
         <a href="#sobre" data-i18n="navAbout">Sobre</a>
         <a href="#stack" data-i18n="navStack">Stack</a>
         <a href="#projetos" data-i18n="navProjects">Projetos</a>
         <a href="#contato" data-i18n="navContact">Contato</a>
       </nav>
+
       <div class="header-controls">
         <div class="lang-switch" role="group" aria-label="Selecionar idioma">
           <button type="button" class="lang-btn active" data-lang="pt-BR">PT</button>
           <button type="button" class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a class="brutal-btn header-btn" href="#projetos" data-i18n="headerCta" data-track="header_portfolio_click" data-track-label="Header - Ver Portfólio">Ver Portfólio</a>
+        <a
+          class="brutal-btn header-btn"
+          href="#projetos"
+          data-i18n="headerCta"
+          data-track="header_portfolio_click"
+          data-track-label="Header - Ver portfolio"
+        >Ver Portfolio</a>
       </div>
     </div>
   </header>
@@ -86,17 +112,32 @@
           <span class="pill hero-anim" data-i18n="heroPill">Desenvolvedor Front-end</span>
 
           <h1 class="hero-title hero-anim">
-            <span data-i18n="heroIntro">OLÁ, SOU</span> <span class="text-accent">LEONARDO LEÃO</span>
+            <span data-i18n="heroIntro">OLA, SOU</span> <span class="text-accent">LEONARDO LEAO</span>
           </h1>
 
           <p class="hero-bio hero-anim" data-i18n="heroBio">
-            Atuo no desenvolvimento de sistemas que sustentam operação, crescimento e tomada de decisão.
-            Minha atuação integra engenharia de software, visão de produto e execução orientada a resultado.
+            Atuo no desenvolvimento de sistemas que sustentam operacao, crescimento e tomada de decisao.
+            Minha atuacao integra engenharia de software, visao de produto e execucao orientada a resultado.
           </p>
 
           <div class="hero-actions hero-anim">
             <a href="#projetos" id="ctaProjetos" class="brutal-btn" data-i18n="heroPrimaryCta" data-track="hero_projects_click" data-track-label="Hero - Veja meus projetos">Veja meus projetos</a>
             <a href="#contato" class="brutal-btn btn-secondary" data-i18n="heroSecondaryCta" data-track="hero_contact_click" data-track-label="Hero - Fale comigo">Fale comigo</a>
+          </div>
+
+          <div class="hero-kpis hero-anim" aria-label="Destaques de atuacao">
+            <article>
+              <strong>12+</strong>
+              <span data-i18n="summaryItem1">Projetos entregues em diferentes segmentos</span>
+            </article>
+            <article>
+              <strong data-i18n="summaryHead2">Multi-stack</strong>
+              <span data-i18n="summaryItem2">Web, Mobile, SaaS e automacoes de operacao</span>
+            </article>
+            <article>
+              <strong data-i18n="summaryHead3">Foco em resultado</strong>
+              <span data-i18n="summaryItem3">Produto, performance e clareza tecnica na execucao</span>
+            </article>
           </div>
         </div>
 
@@ -112,11 +153,11 @@
             </li>
             <li>
               <strong data-i18n="summaryHead2">Multi-stack</strong>
-              <span data-i18n="summaryItem2">Web, Mobile, SaaS e automações de operação</span>
+              <span data-i18n="summaryItem2">Web, Mobile, SaaS e automacoes de operacao</span>
             </li>
             <li>
               <strong data-i18n="summaryHead3">Foco em resultado</strong>
-              <span data-i18n="summaryItem3">Produto, performance e clareza técnica na execução</span>
+              <span data-i18n="summaryItem3">Produto, performance e clareza tecnica na execucao</span>
             </li>
           </ul>
           <div class="panel-illustration" aria-hidden="true">
@@ -134,26 +175,26 @@
 
     <section class="section about" id="sobre">
       <div class="container about-grid reveal-up">
-        <div>
-          <h2 class="section-title" data-i18n="aboutTitle">Atuação técnica com visão de negócio</h2>
+        <div class="about-copy">
+          <h2 class="section-title" data-i18n="aboutTitle">Atuacao tecnica com visao de negocio</h2>
           <p class="about-text" data-i18n="aboutText">
-            Estruturo produtos digitais com arquitetura simples, experiência de uso clara e foco em escalabilidade.
-            Trabalho com times e contextos de alta responsabilidade operacional, onde decisões técnicas impactam diretamente
+            Estruturo produtos digitais com arquitetura simples, experiencia de uso clara e foco em escalabilidade.
+            Trabalho com times e contextos de alta responsabilidade operacional, onde decisoes tecnicas impactam diretamente
             produtividade, receita e previsibilidade.
           </p>
         </div>
         <div class="about-cards">
           <article class="mini-card pressable">
             <h3 data-i18n="aboutCardTitle1">Engenharia de Produto</h3>
-            <p data-i18n="aboutCardText1">Transformação de requisitos complexos em entregas objetivas e usáveis.</p>
+            <p data-i18n="aboutCardText1">Transformacao de requisitos complexos em entregas objetivas e usaveis.</p>
           </article>
           <article class="mini-card pressable">
             <h3 data-i18n="aboutCardTitle2">Arquitetura Aplicada</h3>
-            <p data-i18n="aboutCardText2">Decisões técnicas para performance, manutenção e evolução contínua.</p>
+            <p data-i18n="aboutCardText2">Decisoes tecnicas para performance, manutencao e evolucao continua.</p>
           </article>
           <article class="mini-card pressable">
-            <h3 data-i18n="aboutCardTitle3">Execução Consistente</h3>
-            <p data-i18n="aboutCardText3">Planejamento, implementação e refinamento com padrão de produção.</p>
+            <h3 data-i18n="aboutCardTitle3">Execucao Consistente</h3>
+            <p data-i18n="aboutCardText3">Planejamento, implementacao e refinamento com padrao de producao.</p>
           </article>
         </div>
       </div>
@@ -162,16 +203,16 @@
     <section class="section stack" id="stack">
       <div class="container">
         <div class="stack-head reveal-up">
-          <h2 class="section-title" data-i18n="stackTitle">Stack principal e foco técnico</h2>
-          <p data-i18n="stackSubtitle">Tecnologias onde atuo com mais profundidade em ambiente de produção.</p>
+          <h2 class="section-title" data-i18n="stackTitle">Stack principal e foco tecnico</h2>
+          <p data-i18n="stackSubtitle">Tecnologias onde atuo com mais profundidade em ambiente de producao.</p>
         </div>
         <div class="stack-grid">
           <article class="stack-card pressable reveal-up">
             <div class="stack-card-head">
               <h3 data-i18n="stackCardTitle1">Front-end Web</h3>
-              <span class="stack-level" data-i18n="stackCardLevel1">Avançado</span>
+              <span class="stack-level" data-i18n="stackCardLevel1">Avancado</span>
             </div>
-            <p data-i18n="stackCardText1">Interfaces escaláveis com foco em performance, design system e experiência de produto.</p>
+            <p data-i18n="stackCardText1">Interfaces escalaveis com foco em performance, design system e experiencia de produto.</p>
             <div class="stack-meter" aria-hidden="true">
               <span style="width: 92%"></span>
             </div>
@@ -186,9 +227,9 @@
           <article class="stack-card pressable reveal-up">
             <div class="stack-card-head">
               <h3 data-i18n="stackCardTitle2">Back-end e APIs</h3>
-              <span class="stack-level" data-i18n="stackCardLevel2">Avançado</span>
+              <span class="stack-level" data-i18n="stackCardLevel2">Avancado</span>
             </div>
-            <p data-i18n="stackCardText2">Arquitetura de APIs seguras, manutenção previsível e integrações robustas para operação.</p>
+            <p data-i18n="stackCardText2">Arquitetura de APIs seguras, manutencao previsivel e integracoes robustas para operacao.</p>
             <div class="stack-meter" aria-hidden="true">
               <span style="width: 88%"></span>
             </div>
@@ -203,9 +244,9 @@
           <article class="stack-card pressable reveal-up">
             <div class="stack-card-head">
               <h3 data-i18n="stackCardTitle3">Mobile</h3>
-              <span class="stack-level" data-i18n="stackCardLevel3">Intermediário+</span>
+              <span class="stack-level" data-i18n="stackCardLevel3">Intermediario+</span>
             </div>
-            <p data-i18n="stackCardText3">Aplicações móveis orientadas a experiência offline, produtividade e fluidez operacional.</p>
+            <p data-i18n="stackCardText3">Aplicacoes moveis orientadas a experiencia offline, produtividade e fluidez operacional.</p>
             <div class="stack-meter" aria-hidden="true">
               <span style="width: 82%"></span>
             </div>
@@ -220,9 +261,9 @@
           <article class="stack-card pressable reveal-up">
             <div class="stack-card-head">
               <h3 data-i18n="stackCardTitle4">Foco atual</h3>
-              <span class="stack-level accent-level" data-i18n="stackCardLevel4">Evolução contínua</span>
+              <span class="stack-level accent-level" data-i18n="stackCardLevel4">Evolucao continua</span>
             </div>
-            <p data-i18n="stackCardText4">Aprofundamento em arquitetura de produto, observabilidade e otimização de performance ponta a ponta.</p>
+            <p data-i18n="stackCardText4">Aprofundamento em arquitetura de produto, observabilidade e otimizacao de performance ponta a ponta.</p>
             <div class="stack-meter" aria-hidden="true">
               <span style="width: 86%"></span>
             </div>
@@ -241,9 +282,9 @@
       <div class="container">
         <div class="projects-head reveal-up">
           <h2 class="section-title" data-i18n-html="projectsTitle">
-            Aposto que você vai se <span class="text-accent">impressionar</span> com meu trabalho...
+            Aposto que voce vai se <span class="text-accent">impressionar</span> com meu trabalho...
           </h2>
-          <p data-i18n="projectsSubtitle">Seleção de projetos com diferentes contextos de negócio, escalas e stacks.</p>
+          <p data-i18n="projectsSubtitle">Selecao de projetos com diferentes contextos de negocio, escalas e stacks.</p>
         </div>
         <div id="projectsGrid" class="projects-grid"></div>
       </div>
@@ -252,10 +293,10 @@
 
   <footer class="section contact" id="contato">
     <div class="container contact-shell reveal-up">
-      <div>
+      <div class="contact-copy">
         <h2 class="section-title" data-i18n="contactTitle">Vamos construir algo de impacto?</h2>
         <p class="contact-text" data-i18n="contactText">
-          Estou disponível para novos desafios, produtos e parcerias estratégicas.
+          Estou disponivel para novos desafios, produtos e parcerias estrategicas.
         </p>
       </div>
       <div class="contact-actions">
@@ -264,6 +305,7 @@
         <a class="brutal-btn btn-secondary" href="https://github.com/leonardoleaoo" target="_blank" rel="noopener noreferrer" data-track="contact_github_click" data-track-label="Contato - GitHub">GitHub</a>
       </div>
     </div>
+    <p class="footer-note">&copy; <span id="currentYear"></span> Leonardo Leao.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
