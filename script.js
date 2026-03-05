@@ -335,12 +335,13 @@ function montarCardsProjetos() {
         .join("");
 
       const numero = String(index + 1).padStart(2, "0");
+      const nomeProjeto = projeto.nome?.[currentLang] ?? projeto.nome?.[DEFAULT_LANG] ?? projeto.nome;
       const descricaoProjeto = projeto.descricao[currentLang] ?? projeto.descricao[DEFAULT_LANG];
 
       return `
         <article class="project-card pressable">
           <div class="project-top">
-            <h3>${escapeHtml(projeto.nome)}</h3>
+            <h3>${escapeHtml(nomeProjeto)}</h3>
             <span class="project-index">${numero}</span>
           </div>
           <p>${escapeHtml(descricaoProjeto)}</p>
