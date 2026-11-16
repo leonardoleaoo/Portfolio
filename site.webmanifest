@@ -1,0 +1,12 @@
+{
+  "name": "Leonardo Leão | Desenvolvedor Full Stack",
+  "short_name": "Leonardo Leão",
+  "start_url": "/Portfolio/",
+  "display": "browser",
+  "background_color": "#F3F4EF",
+  "theme_color": "#1F4436",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
